@@ -1,5 +1,6 @@
 
 import datastructure.BinaryTree;
+import sort.SortUtils;
 
 public class Main {
 
@@ -16,8 +17,18 @@ public class Main {
 		binaryTree.add(7);
 		binaryTree.add(14);
 		binaryTree.add(13);
-
+		
+		System.out.println("Binary tree");
 		System.out.println(binaryTree.diagonalTransverse());
+		
+		int[] test = {1, 2, 3, 2};
+		SortUtils.quickSort(test);
+		
+		System.out.println("");
+		System.out.println("Quicksort:");
+		for (int i = 0; i < test.length; i++) {
+			System.out.print(test[i] + " ");
+		}
 
 	}
 
