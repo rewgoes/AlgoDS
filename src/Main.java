@@ -1,5 +1,6 @@
 
 import datastructure.BinaryTree;
+import questions.DecompressString;
 import sort.SortUtils;
 
 public class Main {
@@ -29,7 +30,11 @@ public class Main {
 		for (int i = 0; i < test.length; i++) {
 			System.out.print(test[i] + " ");
 		}
+		
 
+		System.out.println("\n");
+		String string = "32[]";		
+		System.out.println(DecompressString.solution(string));
 	}
 
 }
