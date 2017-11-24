@@ -1,12 +1,16 @@
 
-import questions.LC_388;
+import java.util.ArrayList;
+
+import questions.LC_267;
 
 public class Main {
 
 	public static void main(String[] args) {
-
-		System.out.println(LC_388.lengthLongestPath("dir\\n\\tsubdir1\\n\\tsubdir2\\n\\t\\tfile.t"));
-
+		 ArrayList<String> permutations = LC_267.generatePalindromes("arara");
+		 
+		 for (String s : permutations) {
+			 System.out.println(s);
+		 }
 	}
 
 }

@@ -2,7 +2,9 @@ package datastructure;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.Map.Entry;
+import java.util.Queue;
 
 public class BinaryTree {
 
@@ -151,6 +153,28 @@ public class BinaryTree {
 
 			diagonalTransverse(hashMap, node.right, index);
 		}
+	}
+	
+	public String breadthSearch() {
+		Queue<Node> queue = new LinkedList<>();
+		
+		queue.add(head);
+		return breadthSearch(queue);
+	}
+	
+	private String breadthSearch(Queue<Node> queue) {
+		Node node = queue.poll();
+		if (node != null) {
+			queue.add(node.left);
+			queue.add(node.right);
+			String child = breadthSearch(queue);
+			if (child == null) {
+				return Integer.toString(node.value);
+			} else {
+				return node.value + " " + child;				
+			}
+		}
+		return null;
 	}
 
 	class Node {
