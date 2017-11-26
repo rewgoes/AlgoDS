@@ -1,6 +1,9 @@
 package questions;
 
 public class LC_733 {
+	// https://leetcode.com/problems/flood-fill/description/
+	// https://leetcode.com/contest/weekly-contest-60/problems/flood-fill/
+	
 	private static int previousColor;
 	private static int nc;
 	private static boolean[][] visited;

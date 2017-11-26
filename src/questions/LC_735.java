@@ -3,6 +3,9 @@ package questions;
 import java.util.Stack;
 
 public class LC_735 {
+	// https://leetcode.com/problems/asteroid-collision/description/
+	// https://leetcode.com/contest/weekly-contest-60/problems/asteroid-collision/
+	
 	public static int[] asteroidCollision(int[] asteroids) {
 		Stack<Integer> values = new Stack<>();
 

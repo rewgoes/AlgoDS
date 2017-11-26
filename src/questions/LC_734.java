@@ -5,6 +5,9 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class LC_734 {
+	// https://leetcode.com/problems/sentence-similarity/description/
+	// https://leetcode.com/contest/weekly-contest-60/problems/sentence-similarity/
+	
 	public boolean areSentencesSimilar(String[] words1, String[] words2, String[][] pairs) {
 		if (words1.length == words2.length) {
 			HashMap<String, Set<String>> hashPairs = new HashMap<>();
