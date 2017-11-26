@@ -1,16 +1,25 @@
 
-import java.util.ArrayList;
-
-import questions.LC_267;
+import datastructure.Graph;
+import datastructure.Graph.Node;
 
 public class Main {
 
 	public static void main(String[] args) {
-		 ArrayList<String> permutations = LC_267.generatePalindromes("arara");
+		 Graph graph = new Graph();
+		 graph.addEdge("s", "a", 18);
+		 graph.addEdge("s", "c", 15);
+		 graph.addEdge("a", "b", 9);
+		 graph.addEdge("a", "c", 6);
+		 graph.addEdge("c", "b", 14);
+		 graph.addEdge("c", "d", 7);
+		 graph.addEdge("b", "d", 10);
+		 graph.addEdge("b", "t", 28);
+		 graph.addEdge("d", "t", 36);
 		 
-		 for (String s : permutations) {
-			 System.out.println(s);
-		 }
+		 Node node = graph.nodes.get("s");
+		 
+		 boolean weighted = true;
+		 System.out.println(graph.shortestPath("s", "t", weighted));
 	}
 
 }
