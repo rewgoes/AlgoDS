@@ -2,8 +2,10 @@ package datastructure;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Map.Entry;
 import java.util.PriorityQueue;
+import java.util.Queue;
 import java.util.Set;
 
 public class Graph {
@@ -54,6 +56,7 @@ public class Graph {
 		}
 	}
 
+	// weighted edges
 	private String dijsktra(String source, String target) {
 		if (nodes.containsKey(source) && nodes.containsKey(target)) {
 			Set<String> notVisited = new HashSet<>(nodes.size()); // not visited / colored nodes
@@ -115,7 +118,54 @@ public class Graph {
 		return null;
 	}
 
+	// unweighted edges
 	private String shortestPath(String source, String target) {
+		if (nodes.containsKey(source) && nodes.containsKey(target)) {
+			Queue<Node> queue = new LinkedList<>();
+			HashMap<String, Integer> visited = new HashMap<>();
+			queue.add(nodes.get(source));
+			visited.put(source, 0);
+
+			while (!queue.isEmpty() && !visited.containsKey(target)) {
+				Node node = queue.poll();
+				
+				for (Edge edge : node.edges.values()) {
+					String destination = node.id.equals(edge.end.id) ? edge.start.id : edge.end.id;
+					if (!visited.containsKey(destination)) {
+						queue.add(nodes.get(destination));
+						visited.put(destination, visited.get(node.id) + 1);
+					}
+				}
+			}
+			
+			// found target node
+			if (visited.containsKey(target)) {
+				String path = target;
+				
+				Node node = nodes.get(target);
+				int pathSize = visited.get(target);
+				System.out.println("has path of size: " + pathSize);
+				
+				while (node != null) {
+					for (Edge edge : node.edges.values()) {
+						String destination = node.id.equals(edge.end.id) ? edge.start.id : edge.end.id;
+						
+						if (visited.containsKey(destination) && visited.get(destination) == pathSize - 1) {
+							pathSize--;
+							path = destination + " -> " + path;
+							node = nodes.get(destination);
+							if (pathSize == 0) {
+								node = null;
+							}
+							break;
+						}
+					}
+				}
+				
+				return path;
+			}
+			
+		}
 		return null;
 	}
 
