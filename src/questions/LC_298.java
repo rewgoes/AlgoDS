@@ -82,5 +82,4 @@ public class LC_298 {
 		else
 			return c;
 	}
-
 }
