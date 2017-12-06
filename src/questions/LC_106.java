@@ -6,17 +6,18 @@ public class LC_106 {
 	// int[] postOrder = new int[] { 4, 5, 2, 6, 7, 3, 1 };
 	//
 	// LC_106.buildTree(inOrder, postOrder);
+	
+	//https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/description/
 
 	public static class TreeNode {
 		int val;
 		TreeNode left;
 		TreeNode right;
-
 		TreeNode(int x) {
 			val = x;
 		}
 	}
-
+	
 	public static TreeNode buildTree(int[] inorder, int[] postorder) {
 		if (inorder.length == 0)
 			return null;
