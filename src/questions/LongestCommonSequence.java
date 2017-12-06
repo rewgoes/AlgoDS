@@ -10,6 +10,7 @@ public class LongestCommonSequence {
 	// The characters does not need to be continuos
 
 	// Longest Common Subsequence
+	// System.out.println(LongestCommonSequence.solve("BATD", "BABACDTD"));
 	public static int solve(String a, String b) {
 		int[][] dp = new int[a.length()][b.length()];
 		for (int[] row : dp) {
