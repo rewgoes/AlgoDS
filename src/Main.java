@@ -1,6 +1,4 @@
-import java.util.List;
-
-import questions.LC_215_QuickSelect;
+import questions.LC_741;
 
 public class Main {
 
@@ -8,19 +6,21 @@ public class Main {
 
 		long start = System.currentTimeMillis();
 
-		int[] nums = new int[] { 2, 3, 4, 5, 11, 7, 8, 9, 10, 6 };
-		int k = 11;
-		System.out.println(LC_215_QuickSelect.solveRecuservely(nums, k));
+		int[][] grid = new int[][] {
+			{1,1,1,1,0,0,0},
+			{0,0,0,1,0,0,0},
+			{0,0,0,1,0,0,0},
+			{0,0,0,1,0,0,1},
+			{1,0,0,1,0,0,0},
+			{0,0,0,1,0,0,0},
+			{0,0,0,1,1,1,1},	
+		};
+		System.out.println(LC_741.cherryPickup(grid));
 
 		long end = System.currentTimeMillis();
 
 		System.out.println("\n\n\n");
 		System.out.printf("Took: %d\n", end - start);
-
-	}
-
-	public static void bla(List<Integer> a) {
-
 	}
 
 }

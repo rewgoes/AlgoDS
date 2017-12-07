@@ -2,7 +2,12 @@ package questions;
 
 public class LC_740 {
 
+	//https://leetcode.com/problems/delete-and-earn/
+	
 	public static int deleteAndEarn(int[] nums) {
+		// nums[i] is an integer in the range [1, 10000] (K = 10000)
+		
+		//count number of k
 		int[] count = new int[10001];
 		for (int x : nums) {
 			count[x]++;
