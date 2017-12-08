@@ -1,4 +1,4 @@
-import questions.LC_741;
+import questions.LC_294;
 
 public class Main {
 
@@ -6,21 +6,11 @@ public class Main {
 
 		long start = System.currentTimeMillis();
 
-		int[][] grid = new int[][] {
-			{1,1,1,1,0,0,0},
-			{0,0,0,1,0,0,0},
-			{0,0,0,1,0,0,0},
-			{0,0,0,1,0,0,1},
-			{1,0,0,1,0,0,0},
-			{0,0,0,1,0,0,0},
-			{0,0,0,1,1,1,1},	
-		};
-		System.out.println(LC_741.cherryPickup(grid));
-
+		System.out.println(LC_294.canWin("-+++++-+--+++--++++"));
 		long end = System.currentTimeMillis();
 
 		System.out.println("\n\n\n");
 		System.out.printf("Took: %d\n", end - start);
+		
 	}
-
 }
