@@ -1,7 +1,15 @@
 package questions;
 
-public class BoxStackWithRotation {
+public class S1 {
 
+	// Output: 36700
+
+//	int[][] boxes = new int[][] { { 910, 360, 610 }, { 10, 170, 730 }, { 9300, 730, 4160 }, { 280, 1950, 8610 },
+//			{ 2460, 8940, 2030 }, { 5190, 1370, 1930 }, { 3470, 2410, 7530 }, { 4960, 2770, 1990 },
+//			{ 2010, 1430, 2560 }, { 7570, 8030, 2270 }, { 790, 1430, 1270 }, { 8930, 260, 9160 },
+//			{ 8450, 670, 6490 }, { 4750, 350, 5180 }, { 750, 4970, 4870 } };
+
+	
 	public static int solve(int[][] boxes) {
 		Box[][] boxesRotations = new Box[boxes.length][3];
 		
@@ -13,7 +21,7 @@ public class BoxStackWithRotation {
 
 		boolean[] visited = new boolean[boxes.length];
 		
-		//TODO: add some dynamic programming here
+		//TODO: add some dynamic programming here (check if there's any condition
 
 		return helper(boxesRotations, visited, -1, -1);
 	}
